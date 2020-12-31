@@ -1,0 +1,58 @@
+************** TOUR de jojo *******************
+jojo [02][12][06]
+jojo a joué la carte n° 1 [12] sur la pile n°1
+jojo a joué la carte n° 2 [02] sur la pile n°3
+jojo a joué la carte n° 3 [06] sur la pile n°2
+!!!! Le joueur n'a plus de carte et pioche 
+----------  TOUR n° 1 de jojo ---------------------
+jojo [08][10][03]
+Deck : [09][04][11][05][07]
+Pile n°1 Pile Asc : [01][12]
+Pile n°2 Pile Asc : [01][06]
+Pile n°3 Pile Dsc : [13][02]
+Pile n°4 Pile Dsc : [13]
+************** TOUR de juju *******************
+juju [05][11][07]
+juju a joué la carte n° 1 [11] sur la pile n°2
+juju a joué la carte n° 2 [07] sur la pile n°4
+!!!! Fin du tour de juju
+----------  TOUR n° 2 de juju ---------------------
+juju [05][09][04]
+Deck vide !!!
+Pile n°1 Pile Asc : [01][12]
+Pile n°2 Pile Asc : [01][06][11]
+Pile n°3 Pile Dsc : [13][02]
+Pile n°4 Pile Dsc : [13][07]
+*******************************************************
+Nombre de lignes écrites 25
+************** DERNIER TOUR JOUE *********************----------  TOUR n° 2 de juju ---------------------
+juju [04][09][05]
+Deck vide !!!
+Pile n°1 Pile Asc : [01][12]
+Pile n°2 Pile Asc : [01][06][11]
+Pile n°3 Pile Dsc : [13][02]
+Pile n°4 Pile Dsc : [13][07]
+************** TOUR de juju *******************
+juju [04][09][05]
+juju a joué la carte n° 1 [05] sur la pile n°4
+!!!! Fin du tour de juju
+----------  TOUR n° 3 de juju ---------------------
+juju [04][09]
+Deck vide !!!
+Pile n°1 Pile Asc : [01][12]
+Pile n°2 Pile Asc : [01][06][11]
+Pile n°3 Pile Dsc : [13][02]
+Pile n°4 Pile Dsc : [13][07][05]
+************** TOUR de jojo *******************
+jojo [03][10][08]
+jojo a joué la carte n° 1 [03] sur la pile n°4
+!!!! Fin du tour de jojo
+----------  TOUR n° 4 de jojo ---------------------
+jojo [10][08]
+Deck vide !!!
+Pile n°1 Pile Asc : [01][12]
+Pile n°2 Pile Asc : [01][06][11]
+Pile n°3 Pile Dsc : [13][02]
+Pile n°4 Pile Dsc : [13][07][05][03]
+*******************************************************
+Nombre de lignes écrites 29

@@ -1,0 +1,53 @@
+****************************************************************
+                NOUVELLE PARTIE partie5
+****************************************************************
+************** TOUR de jojo *******************
+jojo [09][10][07]
+jojo a joué la carte n° 1 [10] sur la pile n°1
+jojo a joué la carte n° 2 [09] sur la pile n°2
+!!!! Fin du tour de jojo
+----------  TOUR n° 1 de jojo ---------------------
+jojo [03][06][07]
+Deck : [02][05][11][12][04][08]
+Pile n°1 Pile Asc : [01][10]
+Pile n°2 Pile Asc : [01][09]
+Pile n°3 Pile Dsc : [13]
+Pile n°4 Pile Dsc : [13]
+*******************************************************
+Nombre de lignes écrites 15
+****************************************************************
+                NOUVELLE PARTIE partie5
+****************************************************************
+************** TOUR de jojo *******************
+jojo [09][10][07]
+jojo a joué la carte n° 1 [10] sur la pile n°1
+jojo a joué la carte n° 2 [09] sur la pile n°2
+!!!! Fin du tour de jojo
+----------  TOUR n° 1 de jojo ---------------------
+jojo [03][06][07]
+Deck : [02][05][11][12][04][08]
+Pile n°1 Pile Asc : [01][10]
+Pile n°2 Pile Asc : [01][09]
+Pile n°3 Pile Dsc : [13]
+Pile n°4 Pile Dsc : [13]
+****************************************************************
+                PARTIE REPRISE partie5
+****************************************************************
+************** TOUR de juju *******************
+juju [05][02][04]
+juju a joué la carte n° 1 [02] sur la pile n°3
+juju a joué la carte n° 2 [04] sur la pile n°4
+!!!! Fin du tour de juju
+----------  TOUR n° 2 de juju ---------------------
+juju [08][11][05]
+Deck : [12]
+Pile n°1 Pile Asc : [01][10]
+Pile n°2 Pile Asc : [01][09]
+Pile n°3 Pile Dsc : [13][02]
+Pile n°4 Pile Dsc : [13][04]
+************** TOUR de jojo *******************
+jojo [07][06][03]
+jojo a joué la carte n° 1 [03] sur la pile n°4
+jojo a perdu la partie !!!!!!
+*******************************************************
+Nombre de lignes écrites 34

@@ -1,0 +1,17 @@
+****************************************************************
+                NOUVELLE PARTIE partie4_1
+****************************************************************
+************** TOUR de jojo *******************
+jojo [08][11][09]
+jojo a joué la carte n° 1 [11] sur la pile n°1
+jojo a joué la carte n° 2 [09] sur la pile n°2
+!!!! Fin du tour de jojo
+----------  TOUR n° 1 de jojo ---------------------
+jojo [08][10][12]
+Deck : [03][02][04][07][06][05]
+Pile n°1 Pile Asc : [01][11]
+Pile n°2 Pile Asc : [01][09]
+Pile n°3 Pile Dsc : [13]
+Pile n°4 Pile Dsc : [13]
+*******************************************************
+Nombre de lignes écrites 15

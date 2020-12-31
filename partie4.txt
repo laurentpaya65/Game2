@@ -1,0 +1,143 @@
+****************************************************************
+                NOUVELLE PARTIE partie4
+****************************************************************
+************** TOUR de jojo *******************
+jojo [11][07][08]
+jojo a joué la carte n° 1 [11] sur la pile n°1
+jojo a joué la carte n° 2 [08] sur la pile n°2
+!!!! Fin du tour de jojo
+----------  TOUR n° 1 de jojo ---------------------
+jojo [07][03][02]
+Deck : [10][06][09][05][04][12]
+Pile n°1 Pile Asc : [01][11]
+Pile n°2 Pile Asc : [01][08]
+Pile n°3 Pile Dsc : [13]
+Pile n°4 Pile Dsc : [13]
+*******************************************************
+Nombre de lignes écrites 15****************************************************************
+                NOUVELLE PARTIE partie4
+****************************************************************
+************** TOUR de jojo *******************
+jojo [07][03][05]
+jojo a joué la carte n° 1 [03] sur la pile n°3
+jojo a joué la carte n° 2 [05] sur la pile n°4
+!!!! Fin du tour de jojo
+----------  TOUR n° 1 de jojo ---------------------
+jojo [12][04][07]
+Deck : [02][11][09][06][08][10]
+Pile n°1 Pile Asc : [01]
+Pile n°2 Pile Asc : [01]
+Pile n°3 Pile Dsc : [13][03]
+Pile n°4 Pile Dsc : [13][05]
+*******************************************************
+Nombre de lignes écrites 15****************************************************************
+                NOUVELLE PARTIE partie4
+****************************************************************
+************** TOUR de jojo *******************
+jojo [08][06][03]
+jojo a joué la carte n° 1 [03] sur la pile n°3
+jojo a joué la carte n° 2 [08] sur la pile n°1
+!!!! Fin du tour de jojo
+----------  TOUR n° 1 de jojo ---------------------
+jojo [06][02][09]
+Deck : [10][11][12][04][05][07]
+Pile n°1 Pile Asc : [01][08]
+Pile n°2 Pile Asc : [01]
+Pile n°3 Pile Dsc : [13][03]
+Pile n°4 Pile Dsc : [13]
+*******************************************************
+Nombre de lignes écrites 15****************************************************************
+                NOUVELLE PARTIE partie4
+****************************************************************
+************** TOUR de jojo *******************
+jojo [10][04][08]
+jojo a joué la carte n° 1 [10] sur la pile n°1
+jojo a joué la carte n° 2 [04] sur la pile n°3
+!!!! Fin du tour de jojo
+----------  TOUR n° 1 de jojo ---------------------
+jojo [11][03][08]
+Deck : [02][09][06][12][07][05]
+Pile n°1 Pile Asc : [01][10]
+Pile n°2 Pile Asc : [01]
+Pile n°3 Pile Dsc : [13][04]
+Pile n°4 Pile Dsc : [13]
+*******************************************************
+Nombre de lignes écrites 15****************************************************************
+                NOUVELLE PARTIE partie4
+****************************************************************
+************** TOUR de jojo *******************
+jojo [02][06][09]
+jojo a joué la carte n° 1 [02] sur la pile n°3
+jojo a joué la carte n° 2 [09] sur la pile n°1
+!!!! Fin du tour de jojo
+----------  TOUR n° 1 de jojo ---------------------
+jojo [12][08][06]
+Deck : [04][03][05][07][10][11]
+Pile n°1 Pile Asc : [01][09]
+Pile n°2 Pile Asc : [01]
+Pile n°3 Pile Dsc : [13][02]
+Pile n°4 Pile Dsc : [13]
+*******************************************************
+Nombre de lignes écrites 15****************************************************************
+                NOUVELLE PARTIE partie4
+****************************************************************
+************** TOUR de jojo *******************
+jojo [04][02][11]
+jojo a joué la carte n° 1 [11] sur la pile n°1
+jojo a joué la carte n° 2 [02] sur la pile n°3
+!!!! Fin du tour de jojo
+----------  TOUR n° 1 de jojo ---------------------
+jojo [08][04][07]
+Deck : [05][12][06][09][03][10]
+Pile n°1 Pile Asc : [01][11]
+Pile n°2 Pile Asc : [01]
+Pile n°3 Pile Dsc : [13][02]
+Pile n°4 Pile Dsc : [13]
+************** TOUR de juju *******************
+juju [03][10][09]
+juju a joué la carte n° 1 [10] sur la pile n°2
+juju a joué la carte n° 2 [03] sur la pile n°4
+!!!! Fin du tour de juju
+----------  TOUR n° 2 de juju ---------------------
+juju [12][09][06]
+Deck : [05]
+Pile n°1 Pile Asc : [01][11]
+Pile n°2 Pile Asc : [01][10]
+Pile n°3 Pile Dsc : [13][02]
+Pile n°4 Pile Dsc : [13][03]
+*******************************************************
+Nombre de lignes écrites 27****************************************************************
+                PARTIE REPRISE partie4
+****************************************************************
+************** TOUR de jojo *******************
+jojo [04][07][08]
+jojo a joué la carte n° 1 [04] sur la pile n°1
+jojo a joué la carte n° 2 [08] sur la pile n°2
+!!!! Fin du tour de jojo
+----------  TOUR n° 3 de jojo ---------------------
+jojo [07][05]
+Deck vide !!!
+Pile n°1 Pile Asc : [10][01][04]
+Pile n°2 Pile Asc : [11][01][08]
+Pile n°3 Pile Dsc : [02][13]
+Pile n°4 Pile Dsc : [13][03]
+************** TOUR de juju *******************
+juju [09][06][12]
+juju a joué la carte n° 1 [12] sur la pile n°1
+!!!! Fin du tour de juju
+----------  TOUR n° 4 de juju ---------------------
+juju [09][06]
+Deck vide !!!
+Pile n°1 Pile Asc : [10][01][04][12]
+Pile n°2 Pile Asc : [11][01][08]
+Pile n°3 Pile Dsc : [02][13]
+Pile n°4 Pile Dsc : [13][03]
+*******************************************************
+Nombre de lignes écrites 26****************************************************************
+                PARTIE REPRISE partie4
+****************************************************************
+************** TOUR de jojo *******************
+jojo [05][07]
+jojo a perdu la partie !!!!!!
+*******************************************************
+Nombre de lignes écrites 6
