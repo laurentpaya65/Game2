@@ -52,6 +52,33 @@ public class PileServiceImpl implements PileService {
     }
 
     @Override
+    public boolean testRemonteTemps(PileDto pileDto, Carte carte) {
+        if (pileDto.getSens() == 'A' && pileDto.getCartePile().getLast().getValeur() - carte.getValeur() == 10) {
+            return true;
+        }
+        if (pileDto.getSens() == 'D' && carte.getValeur() - pileDto.getCartePile().getLast().getValeur() == 10) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public int diffCartePile(PileDto pileDto, Carte carte) {
+        int diff = TAILLE_PILE + 2;
+        if (pileDto.getSens() == 'A') {
+            if (carte.getValeur() - pileDto.getCartePile().getLast().getValeur() > 0) {
+                diff = carte.getValeur() - pileDto.getCartePile().getLast().getValeur();
+            }
+        }
+        if (pileDto.getSens() == 'D') {
+            if (pileDto.getCartePile().getLast().getValeur() - carte.getValeur() > 0) {
+                diff = pileDto.getCartePile().getLast().getValeur() - carte.getValeur();
+            }
+        }
+        return diff;
+    }
+
+    @Override
     public PileDto pileToDto(Pile pile) {
         PileDto dto = new PileDto();
         dto.setId(pile.getId());

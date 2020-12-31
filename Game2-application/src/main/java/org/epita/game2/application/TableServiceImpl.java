@@ -4,9 +4,9 @@ import org.epita.game2.domaine.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Deque;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
+
+import static org.epita.game2.domaine.PileDto.TAILLE_PILE;
 
 @Service
 public class TableServiceImpl implements TableService {
@@ -58,19 +58,66 @@ public class TableServiceImpl implements TableService {
     }
 
     @Override
+    public Map<Integer,Carte> testCoupOrdinateurNiv5(Set<Carte> cartes) {
+        if (cartes == null || cartes.size() == 0) {
+            return null;
+        }
+
+        Map<Integer, Carte> pileCarte = new HashMap<>();
+
+        // test si on peut remonter dans le temps
+        for (Carte carte : cartes) {
+            for (int i = 0; i < 4; i++) {
+                if (pileService.testRemonteTemps(TourDeJeuDto.tableDto.getPiles()[i], carte)) {
+                    pileCarte.put(i + 1, carte);
+                    return pileCarte;
+                }
+            }
+        }
+        return null;
+    }
+
+        @Override
+    public Map<Integer,Carte> testCoupOrdinateurNiv1(Set<Carte> cartes) {
+        if (cartes == null || cartes.size() == 0) {
+            return null;
+        }
+
+        Map<Integer,Carte> pileCarte = new HashMap<>();
+        // recherche du minimum entre carte et dessus de Pile
+        int pile = 5;
+        Carte carte1 =  new Carte();
+        int min = TAILLE_PILE + 2;
+        int diff = 0;
+        for (Carte carte : cartes) {
+            for (int i = 0; i < 4; i++) {
+                diff = pileService.diffCartePile(TourDeJeuDto.tableDto.getPiles()[i],carte);
+                if ( diff < min ) {
+                    min = diff;
+                    carte1 = carte;
+                    pile = i+1;
+
+                }
+            }
+        }
+        pileCarte.put(pile,carte1);
+        return pileCarte;
+    }
+
+    @Override
     public void tableToDto(Table table) {
         TourDeJeuDto.tableDto = new TableDto();
         TourDeJeuDto.tableDto.setId(table.getId());
         PileDto[] pilesDto = new PileDto[4];
-        int iA =0;
-        int iB =2;
+        int iA = 1;
+        int iB = 3;
         for (Pile pile : table.getPiles()) {
             if (pile.getSens() == 'A') {
                 pilesDto[iA] = pileService.pileToDto(pile);
-                iA++;
+                iA--;
             } else {
                 pilesDto[iB] = pileService.pileToDto(pile);
-                iB++;
+                iB--;
             }
         }
         TourDeJeuDto.tableDto.setPiles(pilesDto);

@@ -15,9 +15,14 @@ public class PartieController {
     @Autowired
     private PartieService partieService;
 
+    // ************ NOUVELLE PARTIE pour 2 joueurs **************
 //    {"nom":"partie0",
 //            "joueurs": [{"nom":"jojo"},{"nom":"juju"}]
 //    }
+    // ************ NOUVELLE PARTIE pour 1 joueur = "ordinateur" **************
+//{"nom":"partie9",
+//        "joueurs": [{"nom":"ordinateur"}]
+//}
     @PostMapping(value = {"/initpartie"},consumes = {"application/json"})
     public String initPartie(@RequestBody final PartieDto partieDto1) {
         PartieDto.partieDto = partieDto1;
@@ -25,6 +30,11 @@ public class PartieController {
         return partieService.nouvellePartie();
     }
 
+    // ************ REPRISE PARTIE pour 2 joueurs **************
+    // >>>>>>>>>> la partie doit déjà exister
+//    {"nom":"partie0",
+//            "joueurs": [{"nom":"jojo"},{"nom":"juju"}]
+//    }
     @PostMapping(value = {"/reprisepartie"},consumes = {"application/json"})
     public String reprisePartie(@RequestBody final PartieDto partieDto1) {
         PartieDto.partieDto = partieDto1;

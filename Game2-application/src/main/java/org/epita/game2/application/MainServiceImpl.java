@@ -53,4 +53,20 @@ public class MainServiceImpl implements MainService {
         }
         return false;
     }
+
+    @Override
+    public Set<Carte[]> chercheDiffDix(Main main) {
+        Set<Carte[]> paireADix = new HashSet<>();
+        Carte[] paireCarte = new Carte[2];
+        for (Carte carte : main.getUneMain()) {
+            for (Carte carte1 : main.getUneMain()) {
+                if (carte.getValeur() - carte1.getValeur() == 10) {
+                    paireCarte[0] = carte1;
+                    paireCarte[1] = carte;
+                    paireADix.add(paireCarte);
+                }
+            }
+        }
+        return paireADix;
+    }
 }

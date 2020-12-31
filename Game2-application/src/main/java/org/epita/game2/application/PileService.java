@@ -12,6 +12,10 @@ public interface PileService {
 
     boolean testAjoutCarte(PileDto pileDto, Carte carte);
 
+    boolean testRemonteTemps(PileDto pileDto, Carte carte);
+
+    int diffCartePile(PileDto pileDto, Carte carte);
+
     PileDto pileToDto(Pile pile);
 
     Pile dtoToPile(PileDto pileDto);

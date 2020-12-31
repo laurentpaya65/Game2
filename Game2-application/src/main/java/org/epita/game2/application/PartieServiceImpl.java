@@ -36,11 +36,12 @@ public class PartieServiceImpl implements PartieService {
 //        String nomPartie = nomPartie(PartieDto.partieDto.getNom());
         PartieDto.partieDto.setNomFichier(PartieDto.partieDto.getNom());
         PartieDto.partieDto.setEtat("ENC");
+        affichePartie = "";
         affichePartie += "****************************************************************\n";
         affichePartie += "                NOUVELLE PARTIE "+PartieDto.partieDto.getNom()+"\n";
         affichePartie += "****************************************************************\n";
         finDePartie = false;
-        affichePartie = "";
+
 //        PartieDto.partieDto = new PartieDto();   ==> fait dans PartieController()
 
 //        System.out.println(PartieDto.partieDto.toString());
@@ -65,12 +66,15 @@ public class PartieServiceImpl implements PartieService {
         }
         // initialise la variable static PartieDto.partieDto à partir de la table
         partieToDto(partie);
+
+        affichePartie = "";
         affichePartie += "****************************************************************\n";
         affichePartie += "                PARTIE REPRISE "+PartieDto.partieDto.getNom()+"\n";
         affichePartie += "****************************************************************\n";
-        finDePartie = false;
-        affichePartie = "************** DERNIER TOUR JOUE *********************\n";
+        affichePartie += "************** DERNIER TOUR JOUE *********************\n";
         affichePartie += PartieDto.partieDto.getTours().getLast().toString();
+
+        finDePartie = false;
 
         // déclenchement de la partie
         return partie()+" sauvegardée dans "+PartieDto.partieDto.getNomFichier()+".txt";

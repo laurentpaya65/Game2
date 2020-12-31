@@ -10,7 +10,7 @@ public class Main {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    public final static int TAILLE_MAIN = 3;
+    public final static int TAILLE_MAIN = 4;
 
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private Set<Carte> uneMain;

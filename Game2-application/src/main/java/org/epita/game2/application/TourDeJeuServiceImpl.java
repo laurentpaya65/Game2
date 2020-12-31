@@ -4,7 +4,10 @@ import org.epita.game2.domaine.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
 import java.util.Scanner;
+
+import static org.epita.game2.domaine.PileDto.TAILLE_PILE;
 
 @Service
 public class TourDeJeuServiceImpl implements TourDeJeuService {
@@ -58,7 +61,11 @@ public class TourDeJeuServiceImpl implements TourDeJeuService {
                 return tour;
             }
 
-            saisieCarteEtPile(tour.getJoueurCourant());
+            if (tour.getJoueurCourant().getNom().equals("ordinateur") ) {
+                coupOrdinateur(tour.getJoueurCourant());
+            } else {
+                saisieCarteEtPile(tour.getJoueurCourant());
+            }
 
             // joueur joue une carte
             tour.setJoueurCourant(joueurService.jouerUneCarte(tour.getJoueurCourant(), carteSaisie));
@@ -131,9 +138,7 @@ public class TourDeJeuServiceImpl implements TourDeJeuService {
     private boolean finPartie(Joueur joueur) {
         if (joueur.getMain().getUneMain().size() == 0
                 && TourDeJeuDto.deckDto.getDeck().size() == 0) {
-            System.out.println(joueur.getNom() + " a gagné la partie !!!!!!");
-            PartieServiceImpl.affichePartie += joueur.getNom() + " a gagné la partie !!!!!!";
-            PartieServiceImpl.finDePartie = true;
+            messageFinDePartie();
             return true;
         }
         return false;
@@ -145,14 +150,50 @@ public class TourDeJeuServiceImpl implements TourDeJeuService {
             for (int i = 1; i <= 4 ; i++) {
                 if (tableService.testCarteSurPile(i, carte) ) {
                     return true;
-
                 }
             }
         }
-        System.out.println(joueur.getNom()+" ne peut plus jouer et a perdu la partie !!!!\n");
-        PartieServiceImpl.affichePartie += joueur.getNom() + " a perdu la partie !!!!!!\n";
-        PartieServiceImpl.finDePartie = true;
+        messageFinDePartie();
         return false;
+    }
+    private void messageFinDePartie() {
+        String message = "Partie Terminée !!!!!!  Votre score est >>>> "+calculScore()+" <<<<\n";
+        System.out.println(message);
+        PartieServiceImpl.affichePartie += message;
+        PartieServiceImpl.finDePartie = true;
+    }
+
+    // calcul du score
+    private int calculScore() {
+        // Score = TAILLE_PILE - Sum(carteJoueurs) - CartesDansDeck
+        int score = TAILLE_PILE;
+        for (Joueur joueur : PartieDto.partieDto.getJoueurs()) {
+            score = score - joueur.getMain().getUneMain().size();
+        }
+        score = score - TourDeJeuDto.deckDto.getDeck().size();
+        return score;
+    }
+
+    private void coupOrdinateur(Joueur joueur) {
+        // l'Ordinateur cherche d'abord s'il peut remonter le temps
+        // sinon il joue la carte avec la différence minimum avec le dessus d'une pile
+        Map<Integer,Carte> pileCarte = tableService.testCoupOrdinateurNiv5(joueur.getMain().getUneMain());
+        if (pileCarte != null && pileCarte.size() == 1) {
+            for (Map.Entry<Integer,Carte> pileEtCarte : pileCarte.entrySet()) {
+                numPile = pileEtCarte.getKey();
+                carteSaisie = pileEtCarte.getValue();
+            }
+            return;
+        }
+
+        pileCarte = tableService.testCoupOrdinateurNiv1(joueur.getMain().getUneMain());
+        if (pileCarte == null || pileCarte.size() == 0 || pileCarte.size() > 1 ) {
+            throw new CoupOrdinateurImpossibleException("Problème sur coup ordinateur !!!");
+        }
+        for (Map.Entry<Integer,Carte> pileEtCarte : pileCarte.entrySet()) {
+            numPile = pileEtCarte.getKey();
+            carteSaisie = pileEtCarte.getValue();
+        }
     }
 
     private void saisieCarteEtPile(Joueur joueur) {
