@@ -77,7 +77,44 @@ public class TableServiceImpl implements TableService {
         return null;
     }
 
-        @Override
+    @Override
+    public Map<Integer, Carte> testCoupOrdinateurNiv3(Set<Carte[]> cartes) {
+        if (cartes == null || cartes.size() == 0) {
+            return null;
+        }
+
+        Map<Integer, Carte> pileCarte = new HashMap<>();
+
+        // recherche de la plus grande différence permettant de remonter le temps
+        int pile = 5;
+        Carte[] carte1 =  new Carte[2];
+        int max = 0;
+        int diff = 0;
+
+        for (Carte[] carte: cartes) {
+            for (int i = 0; i < 4; i++) {
+                diff = pileService.diffCartePileNiv3(TourDeJeuDto.tableDto.getPiles()[i],carte);
+                if ( diff > max ) {
+                    max = diff;
+                    carte1 = carte;
+                    pile = i+1;
+                }
+            }
+        }
+        if (pile == 5) {
+            return  null;
+        }
+        Carte carte = new Carte();
+        if (TourDeJeuDto.tableDto.getPiles()[pile-1].getSens() == 'A') {
+            carte = carte1[1];
+        } else {
+            carte = carte1[0];
+        }
+        pileCarte.put(pile,carte);
+        return pileCarte;
+    }
+
+    @Override
     public Map<Integer,Carte> testCoupOrdinateurNiv1(Set<Carte> cartes) {
         if (cartes == null || cartes.size() == 0) {
             return null;

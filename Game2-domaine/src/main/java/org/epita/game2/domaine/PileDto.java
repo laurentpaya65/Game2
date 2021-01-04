@@ -12,7 +12,7 @@ public class PileDto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    public final static int TAILLE_PILE = 18;
+    public final static int TAILLE_PILE = 25;
 
     private char sens;
 

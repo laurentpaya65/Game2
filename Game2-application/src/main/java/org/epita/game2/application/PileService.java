@@ -16,6 +16,8 @@ public interface PileService {
 
     int diffCartePile(PileDto pileDto, Carte carte);
 
+    int diffCartePileNiv3(PileDto pileDto, Carte[] cartes);
+
     PileDto pileToDto(Pile pile);
 
     Pile dtoToPile(PileDto pileDto);

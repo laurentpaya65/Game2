@@ -16,6 +16,7 @@ public interface TableService {
     boolean testCarteSurPile( int numPile, Carte carte);
 
     Map<Integer,Carte> testCoupOrdinateurNiv5(Set<Carte> cartes);
+    Map<Integer,Carte> testCoupOrdinateurNiv3(Set<Carte[]> cartes);
     Map<Integer,Carte> testCoupOrdinateurNiv1(Set<Carte> cartes);
 
     void tableToDto(Table table);

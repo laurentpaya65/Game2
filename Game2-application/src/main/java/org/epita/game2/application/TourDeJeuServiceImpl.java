@@ -186,6 +186,17 @@ public class TourDeJeuServiceImpl implements TourDeJeuService {
             return;
         }
 
+        // l'Ordinateur regarde les paires de carte avec 10 de différence
+        pileCarte = tableService.testCoupOrdinateurNiv3(mainService.chercheDiffDix(joueur.getMain()));
+        if (pileCarte != null && pileCarte.size() == 1) {
+            for (Map.Entry<Integer,Carte> pileEtCarte : pileCarte.entrySet()) {
+                numPile = pileEtCarte.getKey();
+                carteSaisie = pileEtCarte.getValue();
+            }
+            return;
+        }
+
+        // l'Ordinateur cherche la + petite diff avec une pile
         pileCarte = tableService.testCoupOrdinateurNiv1(joueur.getMain().getUneMain());
         if (pileCarte == null || pileCarte.size() == 0 || pileCarte.size() > 1 ) {
             throw new CoupOrdinateurImpossibleException("Problème sur coup ordinateur !!!");

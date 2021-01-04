@@ -28,12 +28,12 @@ public class PileServiceImpl implements PileService {
 
     @Override
     public PileDto ajoutCarte(PileDto pileDto,Carte carte) {
-        if (pileDto.getSens() == 'A' && carte.getValeur() <= pileDto.getCartePile().getLast().getValeur()) {
-            return pileDto;
-        }
-        if (pileDto.getSens() == 'D' && carte.getValeur() >= pileDto.getCartePile().getLast().getValeur()) {
-            return pileDto;
-        }
+//        if (pileDto.getSens() == 'A' && carte.getValeur() <= pileDto.getCartePile().getLast().getValeur()) {
+//            return pileDto;
+//        }
+//        if (pileDto.getSens() == 'D' && carte.getValeur() >= pileDto.getCartePile().getLast().getValeur()) {
+//            return pileDto;
+//        }
         pileDto.getCartePile().add(carte);
         return pileDto;
     }
@@ -73,6 +73,27 @@ public class PileServiceImpl implements PileService {
         if (pileDto.getSens() == 'D') {
             if (pileDto.getCartePile().getLast().getValeur() - carte.getValeur() > 0) {
                 diff = pileDto.getCartePile().getLast().getValeur() - carte.getValeur();
+            }
+        }
+        return diff;
+    }
+
+    @Override
+    public int diffCartePileNiv3(PileDto pileDto, Carte[] cartes) {
+        if (cartes == null) {
+            return 0;
+        }
+        int diff = 0;
+        if (pileDto.getSens() == 'A') {
+            if (cartes[1].getValeur() - pileDto.getCartePile().getLast().getValeur() > 0
+                && pileDto.getCartePile().getLast().getValeur() - cartes[0].getValeur() > 0 ) {
+                diff = pileDto.getCartePile().getLast().getValeur() - cartes[0].getValeur();
+            }
+        }
+        if (pileDto.getSens() == 'D') {
+            if (pileDto.getCartePile().getLast().getValeur() - cartes[0].getValeur() > 0
+                && cartes[1].getValeur() - pileDto.getCartePile().getLast().getValeur() > 0 ) {
+                    diff = cartes[1].getValeur() - pileDto.getCartePile().getLast().getValeur();
             }
         }
         return diff;
